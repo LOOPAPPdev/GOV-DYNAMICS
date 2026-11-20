@@ -43,3 +43,13 @@ GOV-DOC-0E23741A3C54,workflows/simulation.md,simulation,workflow,,pending_review
 GOV-DOC-1ED26662591F,workflows/simulation.yaml,simulation,workflow,,pending_review,,,,
 GOV-DOC-225929299F8E,workflows/spec-plan-tdd-verify.md,spec-plan-tdd-verify,workflow,,pending_review,,,,
 GOV-DOC-EF56B21F788E,workflows/spec-plan-tdd-verify.yaml,spec-plan-tdd-verify,workflow,,pending_review,,,,
+"GOV-DOC-001","catalog/skills/systemic-analysis.skill","Systemic Analysis — original Skill package","skill","1.0.0","specified","","","2026-11-20",""
+"GOV-DOC-002","catalog/skills/systemic-analysis/SKILL.md","Systemic Analysis — SKILL.md","skill-source","1.0.0","specified","","","2026-11-20","GOV-DOC-001"
+"GOV-DOC-003","catalog/skills/systemic-analysis/references/source-extraction.md","Systemic Analysis — references/source-extraction.md","skill-source","1.0.0","specified","","","2026-11-20","GOV-DOC-001"
+"GOV-DOC-004","catalog/skills/systemic-analysis/references/workflow.md","Systemic Analysis — references/workflow.md","skill-source","1.0.0","specified","","","2026-11-20","GOV-DOC-001"
+"GOV-DOC-005","catalog/skills/systemic-analysis/references/agent-rules.md","Systemic Analysis — references/agent-rules.md","skill-source","1.0.0","specified","","","2026-11-20","GOV-DOC-001"
+"GOV-DOC-006","catalog/skills/systemic-analysis/schemas/case.schema.json","Systemic Analysis — schemas/case.schema.json","skill-source","1.0.0","specified","","","2026-11-20","GOV-DOC-001"
+"GOV-DOC-007","catalog/skills/systemic-analysis/scripts/render_mermaid.py","Systemic Analysis — scripts/render_mermaid.py","skill-source","1.0.0","specified","","","2026-11-20","GOV-DOC-001"
+"GOV-DOC-008","catalog/skills/systemic-analysis/scripts/validate_case.py","Systemic Analysis — scripts/validate_case.py","skill-source","1.0.0","specified","","","2026-11-20","GOV-DOC-001"
+"GOV-DOC-009","catalog/skills/systemic-analysis/scripts/new_case.py","Systemic Analysis — scripts/new_case.py","skill-source","1.0.0","specified","","","2026-11-20","GOV-DOC-001"
+"GOV-DOC-010","docs/cases/CASE-AGENTIC-RAG-001/Mapa Agentic RAG.html","Mapa Agentic RAG — CASE-AGENTIC-RAG-001","deliverable","draft","draft","","","2026-11-20","GOV-DOC-001"

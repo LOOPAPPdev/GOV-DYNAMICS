@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/loop-systemic-analysis/case.schema.json",
+  "title": "LOOP Dynamics Systemic Analysis Case",
+  "description": "Contrato estruturado. A conformidade deste esquema não implica validade empírica.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["workflow_version", "case_id", "status", "system", "evidence", "iceberg", "variables", "links", "loops", "archetypes", "behavior_hypotheses", "leverage_points", "roadmap", "simulation", "review"],
+  "properties": {
+    "workflow_version": {"const": "1.0.0"},
+    "case_id": {"type": "string", "minLength": 3},
+    "status": {"enum": ["draft", "review_ready", "externally_validated"]},
+    "system": {
+      "type": "object", "additionalProperties": false,
+      "required": ["name", "problem", "objective", "horizon", "boundary_included", "boundary_excluded", "stakeholders", "method_fit"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "problem": {"type": "string", "minLength": 1},
+        "objective": {"type": "string", "minLength": 1},
+        "horizon": {"type": "string"},
+        "boundary_included": {"type": "array", "items": {"type": "string"}},
+        "boundary_excluded": {"type": "array", "items": {"type": "string"}},
+        "stakeholders": {"type": "array", "items": {"type": "string"}},
+        "method_fit": {"enum": ["high", "medium", "low", "unknown"]}
+      }
+    },
+    "evidence": {"type": "array", "items": {"$ref": "#/$defs/evidence"}},
+    "iceberg": {
+      "type": "object", "additionalProperties": false,
+      "required": ["events", "patterns", "structures", "mental_models"],
+      "properties": {
+        "events": {"$ref": "#/$defs/icebergItems"},
+        "patterns": {"$ref": "#/$defs/icebergItems"},
+        "structures": {"$ref": "#/$defs/icebergItems"},
+        "mental_models": {"$ref": "#/$defs/icebergItems"}
+      }
+    },
+    "variables": {"type": "array", "items": {"$ref": "#/$defs/variable"}},
+    "links": {"type": "array", "items": {"$ref": "#/$defs/link"}},
+    "loops": {"type": "array", "items": {"$ref": "#/$defs/loop"}},
+    "archetypes": {"type": "array", "items": {"$ref": "#/$defs/archetype"}},
+    "behavior_hypotheses": {"type": "array", "items": {"$ref": "#/$defs/hypothesis"}},
+    "leverage_points": {"type": "array", "items": {"$ref": "#/$defs/leverage"}},
+    "roadmap": {"type": "array", "items": {"$ref": "#/$defs/intervention"}},
+    "simulation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "model_type", "validation_evidence_ids", "results"],
+      "properties": {
+        "status": {"enum": ["not_performed", "performed"]},
+        "model_type": {"type": ["string", "null"]},
+        "validation_evidence_ids": {"type": "array", "items": {"type": "string"}},
+        "results": {"type": "array", "items": {"type": "object"}}
+      }
+    },
+    "review": {
+      "type": "object", "additionalProperties": false,
+      "required": ["external_reviewer", "external_evidence", "limitations", "next_gate"],
+      "properties": {
+        "external_reviewer": {"type": ["string", "null"]},
+        "external_evidence": {"type": ["string", "null"]},
+        "limitations": {"type": "array", "items": {"type": "string"}},
+        "next_gate": {"type": "string"}
+      }
+    }
+  },
+  "$defs": {
+    "evidence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "kind", "statement", "status", "source"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^EV-"},
+        "kind": {"enum": ["observation", "measurement", "document", "interview", "assumption"]},
+        "statement": {"type": "string"},
+        "status": {"enum": ["verified", "unverified"]},
+        "source": {"type": ["string", "null"]}
+      }
+    },
+    "icebergItems": {"type": "array", "items": {"type": "object", "required": ["text", "evidence_ids"], "additionalProperties": false, "properties": {"text": {"type": "string"}, "evidence_ids": {"type": "array", "items": {"type": "string"}}}}},
+    "variable": {"type": "object", "additionalProperties": false, "required": ["id", "name", "kind", "unit", "evidence_ids"], "properties": {"id": {"type": "string", "pattern": "^V[0-9]+$"}, "name": {"type": "string"}, "kind": {"enum": ["stock", "flow", "auxiliary", "exogenous", "unknown"]}, "unit": {"type": "string"}, "evidence_ids": {"type": "array", "items": {"type": "string"}}}},
+    "link": {"type": "object", "additionalProperties": false, "required": ["id", "source", "target", "polarity", "delay", "status", "evidence_ids", "disconfirmation_test"], "properties": {"id": {"type": "string", "pattern": "^L[0-9]+$"}, "source": {"type": "string"}, "target": {"type": "string"}, "polarity": {"enum": ["+", "-", "unknown"]}, "delay": {"enum": ["none", "possible", "confirmed", "unknown"]}, "status": {"enum": ["hypothesis", "supported"]}, "evidence_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}, "disconfirmation_test": {"type": "string"}}},
+    "loop": {"type": "object", "additionalProperties": false, "required": ["id", "link_ids", "classification", "status"], "properties": {"id": {"type": "string", "pattern": "^[BRU][0-9]+$"}, "link_ids": {"type": "array", "minItems": 2, "items": {"type": "string"}}, "classification": {"enum": ["balancing", "reinforcing", "undetermined"]}, "status": {"enum": ["hypothesis", "supported"]}}},
+    "archetype": {"type": "object", "additionalProperties": false, "required": ["id", "name", "status", "loop_ids", "disconfirmation_test"], "properties": {"id": {"type": "string"}, "name": {"type": "string"}, "status": {"enum": ["hypothesis", "supported", "rejected"]}, "loop_ids": {"type": "array", "items": {"type": "string"}}, "disconfirmation_test": {"type": "string"}}},
+    "hypothesis": {"type": "object", "additionalProperties": false, "required": ["id", "statement", "time_horizon", "disconfirmation_test", "evidence_ids"], "properties": {"id": {"type": "string"}, "statement": {"type": "string"}, "time_horizon": {"type": "string"}, "disconfirmation_test": {"type": "string"}, "evidence_ids": {"type": "array", "items": {"type": "string"}}}},
+    "leverage": {"type": "object", "additionalProperties": false, "required": ["id", "variable_ids", "hypothesized_mechanism", "evidence_ids", "risks", "priority"], "properties": {"id": {"type": "string"}, "variable_ids": {"type": "array", "items": {"type": "string"}}, "hypothesized_mechanism": {"type": "string"}, "evidence_ids": {"type": "array", "items": {"type": "string"}}, "risks": {"type": "array", "items": {"type": "string"}}, "priority": {"enum": ["low", "medium", "high", "undetermined"]}}},
+    "intervention": {"type": "object", "additionalProperties": false, "required": ["id", "leverage_point_id", "action", "owner", "indicator", "checkpoint", "stop_condition", "approval_required"], "properties": {"id": {"type": "string"}, "leverage_point_id": {"type": "string"}, "action": {"type": "string"}, "owner": {"type": "string"}, "indicator": {"type": "string"}, "checkpoint": {"type": "string"}, "stop_condition": {"type": "string"}, "approval_required": {"type": "boolean"}}}
+  }
+}
