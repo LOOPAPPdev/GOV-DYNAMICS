@@ -1,0 +1,15 @@
+schema_version: '1.0.0'
+skills:
+  - id: GOV-DOC-001
+    name: systemic-analysis
+    version: '1.0.0'
+    path: catalog/skills/systemic-analysis/SKILL.md
+    package: catalog/skills/systemic-analysis.skill
+    package_sha256: 6ce2dcc0e230266f17e8cc35887f990325a1b744933639f7daa8756ae3dd38f8
+    status: specified
+    supplied_by: user_upload
+    deliverables:
+      - id: GOV-DOC-010
+        case_id: CASE-AGENTIC-RAG-001
+        path: docs/cases/CASE-AGENTIC-RAG-001/Mapa Agentic RAG.html
+        status: draft
