@@ -1,4 +1,5 @@
 name: Validate governance document index
+
 on:
   pull_request:
     paths:
@@ -8,12 +9,16 @@ on:
       - 'workflows/**'
       - 'scripts/validate_master_index.py'
   workflow_dispatch:
+
+permissions:
+  contents: read
+
 jobs:
   validate:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
       - name: Check master index
         run: python scripts/validate_master_index.py

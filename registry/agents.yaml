@@ -31,3 +31,6 @@ agents:
   - id: INT-08
     description: 'Intervention Planner — intervenções propostas'
     status: documentation_only
+  - id: DOC-09
+    description: 'Documentation Intake and Index Agent — classificação, ingestão e índice'
+    status: specified
