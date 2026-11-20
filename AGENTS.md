@@ -1,3 +1,3 @@
-# Engineering agents in GOV-DYNAMICS
+# AGENTS.md
 
-This is a documentation-only repository. Do not scaffold executable services. Follow Spec → Plan → TDD → Verify for proposed changes, but never claim execution without evidence. Preserve IDs, aliases, crosswalk and provenance. Do not expose confidential information in this public repository.
+Repositório documental. Preservar nomes e hierarquia definidos no README. Não declarar implementação, testes ou conformidade sem evidências. Usar Spec → Plan → TDD → Verify para qualquer implementação futura. Atualizar `registry/manifest.json`, aliases e crosswalk ao alterar schemas ou IDs. Não publicar segredos.

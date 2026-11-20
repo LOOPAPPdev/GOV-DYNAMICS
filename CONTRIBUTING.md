@@ -1,3 +1,3 @@
 # Contributing
 
-Add documentation under matching architectural folder, update the master index, preserve legacy aliases and crosswalk, include source links and evidence. Prefer feature branches, pull requests and review before merging to main.
+Adicionar documentação à pasta correspondente, preservar IDs e links, registar fontes e versões, rever via pull request. Não incluir dados sensíveis nem lockfiles artificiais.

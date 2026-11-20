@@ -1,0 +1,22 @@
+name: Governance documentation validation
+on:
+  push:
+  pull_request:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate JSON and CSV registry
+        run: |
+          python -m json.tool registry/manifest.json > /dev/null
+          python -m json.tool registry/aliases.json > /dev/null
+          python - <<'PY'
+          import csv
+          from pathlib import Path
+          for path in [Path('registry/crosswalk.csv'), Path('registry/tags.csv')]:
+              with path.open(newline='', encoding='utf-8') as f:
+                  assert next(csv.reader(f), None), f'CSV without header: {path}'
+          assert len(list(Path('agents').glob('*.yaml'))) == 10
+          assert len(list(Path('workflows').glob('*.yaml'))) == 6
+          PY

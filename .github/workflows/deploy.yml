@@ -1,0 +1,10 @@
+# Deployment is intentionally disabled: this is a governance-documentation repository.
+name: Deploy (disabled)
+on:
+  workflow_dispatch:
+jobs:
+  disabled:
+    if: false
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'No deployment configured'

@@ -1,0 +1,10 @@
+{
+  "name": "gov-dynamics",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Governance-only repository. No executable build or deploy configured.",
+  "packageManager": "pnpm@10.28.0",
+  "scripts": {
+    "validate:docs": "node -e \"console.log('Documentation-only: use GitHub Actions for validation')\""
+  }
+}
