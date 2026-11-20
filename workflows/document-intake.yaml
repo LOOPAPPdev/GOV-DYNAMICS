@@ -1,0 +1,41 @@
+id: document-intake
+version: 1.0.0
+agent: DOC-09
+status: specified
+trigger: manual_or_authorized_agent_run
+source: existing_documents
+target_repository: LOOPAPPdev/GOV-DYNAMICS
+steps:
+  - id: discover
+    action: enumerate_supplied_files
+    output: inventory
+  - id: inspect
+    action: read_content_and_metadata
+    reject: [unreadable, secret, confidential, personal_data]
+  - id: classify
+    action: map_to_existing_architecture_directory
+    on_ambiguous: request_review
+  - id: deduplicate
+    action: compare_hash_and_canonical_source
+    on_collision: preserve_existing_and_request_review
+  - id: stage
+    action: prepare_additions_in_branch
+    preserve_original: true
+  - id: index
+    action: update_registry_master_index
+    columns: [document_id, path, title, category, version, status, source_url, owner, last_reviewed, related_requirement]
+    stable_id_prefix: GOV-DOC-
+  - id: validate
+    action: run_registry_validator
+    require: [unique_ids, unique_paths, valid_paths, no_missing_files, csv_utf8]
+  - id: review
+    action: open_pull_request
+    approval_required: true
+  - id: publish
+    action: merge_only_after_approval
+acceptance_criteria:
+  - no_document_lost_or_overwritten
+  - every_new_document_has_master_index_row
+  - no_secret_or_private_document_published
+  - unresolved_ambiguities_are_reported
+  - no_unverified_success_claims
