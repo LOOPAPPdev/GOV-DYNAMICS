@@ -1,0 +1,92 @@
+directory_id,path,purpose,status
+GOV-DIR-001,apps,"Documentação de aplicações e entrega visual",documentation-placeholder
+GOV-DIR-002,apps/web,"Frontend React + TypeScript + Vite",documentation-placeholder
+GOV-DIR-003,apps/web/src,"Organização funcional de frontend",documentation-placeholder
+GOV-DIR-004,apps/web/src/app,"Navegação, roteamento, composição",documentation-placeholder
+GOV-DIR-005,apps/web/src/components,"Componentes partilhados da interface",documentation-placeholder
+GOV-DIR-006,apps/web/src/features,"Features e limites funcionais",documentation-placeholder
+GOV-DIR-007,apps/web/src/features/chat,"Chat e comunicação com agentes",documentation-placeholder
+GOV-DIR-008,apps/web/src/features/diagrams,"React Flow, Mermaid e visualização de sistemas",documentation-placeholder
+GOV-DIR-009,apps/web/src/features/documents,"Visualização de documentos",documentation-placeholder
+GOV-DIR-010,apps/web/src/features/reports,"Relatórios e evidências visuais",documentation-placeholder
+GOV-DIR-011,apps/web/src/features/simulation,"Interface de cenários e simulações",documentation-placeholder
+GOV-DIR-012,apps/web/src/lib,"Clientes e utilitários",documentation-placeholder
+GOV-DIR-013,apps/web/src/lib/api,"Contrato de comunicação HTTP com backend",documentation-placeholder
+GOV-DIR-014,apps/web/src/lib/sse,"Streaming Server-Sent Events",documentation-placeholder
+GOV-DIR-015,services,"Serviços e responsabilidades de backend",documentation-placeholder
+GOV-DIR-016,services/api,"FastAPI + Pydantic + SSE + security",documentation-placeholder
+GOV-DIR-017,services/api/src,"Pacote de aplicação API",documentation-placeholder
+GOV-DIR-018,services/api/src/loop_api,"Entrypoint lógico API",documentation-placeholder
+GOV-DIR-019,services/api/src/loop_api/routes,"Rotas e contratos de endpoints",documentation-placeholder
+GOV-DIR-020,services/api/src/loop_api/security,"OIDC, RBAC, ACL, CSRF e governança IAM",documentation-placeholder
+GOV-DIR-021,services/api/src/loop_api/security/oidc,"Discovery OIDC, JWKS e validação de tokens",documentation-placeholder
+GOV-DIR-022,services/api/src/loop_api/security/rbac,"Roles e permissões",documentation-placeholder
+GOV-DIR-023,services/api/src/loop_api/security/acl,"ACL por projeto e fonte",documentation-placeholder
+GOV-DIR-024,services/api/src/loop_api/streaming,"SSE, eventos e handoff",documentation-placeholder
+GOV-DIR-025,packages,"Pacotes e contratos partilhados",documentation-placeholder
+GOV-DIR-026,packages/ui,"Documentação de componentes UI",documentation-placeholder
+GOV-DIR-027,packages/design-tokens,"Design tokens, temas e acessibilidade",documentation-placeholder
+GOV-DIR-028,packages/contracts,"Contracts como fonte de verdade entre linguagens",documentation-placeholder
+GOV-DIR-029,packages/contracts/json-schema,"JSON Schema canónico",documentation-placeholder
+GOV-DIR-030,packages/contracts/openapi,"Contratos OpenAPI",documentation-placeholder
+GOV-DIR-031,packages/contracts/events,"Schemas e contratos de eventos",documentation-placeholder
+GOV-DIR-032,packages/python,"Núcleos Python modulares",documentation-placeholder
+GOV-DIR-033,packages/python/loop_core,"Domínio, estado e auditoria",documentation-placeholder
+GOV-DIR-034,packages/python/loop_core/models,"Modelos de domínio",documentation-placeholder
+GOV-DIR-035,packages/python/loop_core/state,"Máquina de estado e persistência",documentation-placeholder
+GOV-DIR-036,packages/python/loop_core/audit,"Audit trail, checkpoints e evidências",documentation-placeholder
+GOV-DIR-037,packages/python/loop_harness,"Orquestração de agentes",documentation-placeholder
+GOV-DIR-038,packages/python/loop_harness/orchestrator,"LangGraph e control flow",documentation-placeholder
+GOV-DIR-039,packages/python/loop_harness/adapters,"Integração com LLM e conectores",documentation-placeholder
+GOV-DIR-040,packages/python/loop_harness/tools,"Tool-use e funções permitidas",documentation-placeholder
+GOV-DIR-041,packages/python/loop_harness/guardrails,"Políticas, limites e validação",documentation-placeholder
+GOV-DIR-042,packages/python/loop_knowledge,"RAG e conhecimento",documentation-placeholder
+GOV-DIR-043,packages/python/loop_knowledge/ingestion,"Ingestão PDF Markdown CSV",documentation-placeholder
+GOV-DIR-044,packages/python/loop_knowledge/chunking,"Segmentação e chunk provenance",documentation-placeholder
+GOV-DIR-045,packages/python/loop_knowledge/embeddings,"Embeddings e estratégia de vetorização",documentation-placeholder
+GOV-DIR-046,packages/python/loop_knowledge/indexing,"SQLite FTS5 e índices opcionais",documentation-placeholder
+GOV-DIR-047,packages/python/loop_knowledge/retrieval,"Retrieval, ranking e provenance",documentation-placeholder
+GOV-DIR-048,packages/python/loop_knowledge/citations,"Citações, evidências e source IDs",documentation-placeholder
+GOV-DIR-049,packages/python/loop_dynamics,"Modelagem quantitativa de sistemas",documentation-placeholder
+GOV-DIR-050,packages/python/loop_dynamics/models,"Stocks, flows e relações",documentation-placeholder
+GOV-DIR-051,packages/python/loop_dynamics/simulation,"Execução de cenários",documentation-placeholder
+GOV-DIR-052,packages/python/loop_dynamics/validation,"Calibração e validação quantitativa",documentation-placeholder
+GOV-DIR-053,agents,"Fichas declarativas dos agentes",documentation-placeholder
+GOV-DIR-054,workflows,"Fluxos executáveis no projeto-alvo; especificações aqui",documentation-placeholder
+GOV-DIR-055,registry,"IDs, aliases, crosswalk, índice e proveniência",documentation-placeholder
+GOV-DIR-056,catalog,"Catálogo de recursos reusáveis",documentation-placeholder
+GOV-DIR-057,catalog/prompts,"Especificações e versões de prompts",documentation-placeholder
+GOV-DIR-058,catalog/tools,"Definições de ferramentas e permissões",documentation-placeholder
+GOV-DIR-059,catalog/templates,"Templates aprovados",documentation-placeholder
+GOV-DIR-060,config,"Políticas e parâmetros não secretos",documentation-placeholder
+GOV-DIR-061,config/environments,"Ambientes desenvolvimento staging produção",documentation-placeholder
+GOV-DIR-062,config/security,"Políticas IAM, sessão, CSRF, secrets handling",documentation-placeholder
+GOV-DIR-063,config/taxonomy,"Taxonomia e classificação",documentation-placeholder
+GOV-DIR-064,data,"Documentação sobre dados sem dados operacionais",documentation-placeholder
+GOV-DIR-065,data/fixtures,"Fixtures de teste não sensíveis",documentation-placeholder
+GOV-DIR-066,data/migrations,"Política e registo de migrações",documentation-placeholder
+GOV-DIR-067,infrastructure,"Documentação de infraestrutura e deploy",documentation-placeholder
+GOV-DIR-068,infrastructure/cloudflare,"Pages, R2 e configurações de plataforma",documentation-placeholder
+GOV-DIR-069,infrastructure/containers,"Containers Python e infraestrutura de execução",documentation-placeholder
+GOV-DIR-070,infrastructure/identity,"IdP OIDC e tenant mapping",documentation-placeholder
+GOV-DIR-071,infrastructure/observability,"Logs, traces, métricas e alertas",documentation-placeholder
+GOV-DIR-072,tests,"Estratégias e evidências de verificação",documentation-placeholder
+GOV-DIR-073,tests/unit,"Testes unitários",documentation-placeholder
+GOV-DIR-074,tests/integration,"Integração entre módulos",documentation-placeholder
+GOV-DIR-075,tests/contract,"Contratos e compatibilidade entre stacks",documentation-placeholder
+GOV-DIR-076,tests/e2e,"Cenários ponta a ponta",documentation-placeholder
+GOV-DIR-077,tests/migration,"Migração de schemas, aliases e referências",documentation-placeholder
+GOV-DIR-078,tests/security,"Autorização, injection, IAM e proteção de dados",documentation-placeholder
+GOV-DIR-079,tests/simulation,"Validação determinística de modelos e cenários",documentation-placeholder
+GOV-DIR-080,docs,"Documentação consolidada",documentation-placeholder
+GOV-DIR-081,docs/architecture,"Architecture Decision Model e diagramas",documentation-placeholder
+GOV-DIR-082,docs/adr,"Architecture Decision Records",documentation-placeholder
+GOV-DIR-083,docs/requirements,"PRD, FRD, EARS e critérios de aceitação",documentation-placeholder
+GOV-DIR-084,docs/operations,"Runbooks e operações",documentation-placeholder
+GOV-DIR-085,docs/evidence,"Registos de evidências verificadas",documentation-placeholder
+GOV-DIR-086,docs/governance,"Políticas de governança",documentation-placeholder
+GOV-DIR-087,docs/references,"Referências bibliográficas e standards",documentation-placeholder
+GOV-DIR-088,docs/reviews,"Revisões e gates",documentation-placeholder
+GOV-DIR-089,.github,"Governança de colaboração",documentation-placeholder
+GOV-DIR-090,.github/workflows,"CI documental, sem deploy de aplicações",documentation-placeholder
+GOV-DIR-091,.github/ISSUE_TEMPLATE,"Modelos de issues",documentation-placeholder

@@ -1,0 +1,33 @@
+schema_version: '1.0.0'
+status: draft
+agents:
+  - id: ORC-00
+    description: 'Orchestrator — planeamento, coordenação e handoffs'
+    status: documentation_only
+  - id: GOV-01
+    description: 'Source Steward — proveniência e governança'
+    status: documentation_only
+  - id: ING-02
+    description: 'Extraction — processamento de fontes'
+    status: documentation_only
+  - id: SEG-03
+    description: 'Segmenter — chunking e classificação'
+    status: documentation_only
+  - id: IDX-04
+    description: 'Index Engineer — índices de texto e vetores'
+    status: documentation_only
+  - id: RET-05
+    description: 'Retrieval — contexto relevante e citações'
+    status: documentation_only
+  - id: DYN-06
+    description: 'Dynamics — modelagem e simulação de sistemas'
+    status: documentation_only
+  - id: ARI-00
+    description: 'Logic Validator — consistência lógica'
+    status: documentation_only
+  - id: QA-07
+    description: 'Grounding Reviewer — evidência e fundamentação'
+    status: documentation_only
+  - id: INT-08
+    description: 'Intervention Planner — intervenções propostas'
+    status: documentation_only

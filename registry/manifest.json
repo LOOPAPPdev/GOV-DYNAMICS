@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0.0",
+  "repository": "LOOPAPPdev/GOV-DYNAMICS",
+  "project": "Manus LEGO / LOOP Dynamics",
+  "type": "documentation-only",
+  "source": "arquitetura fornecida pelo utilizador",
+  "implementation_status": "not_verified",
+  "nist_compliance": "not_asserted",
+  "default_branch": "main",
+  "visibility": "public",
+  "canonical_index": "registry/master-index.csv",
+  "directory_index": "registry/directory-index.csv",
+  "naming_policy": "preserve stable IDs and aliases"
+}

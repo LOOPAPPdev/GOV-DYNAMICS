@@ -1,0 +1,9 @@
+# SEG-03
+
+**Papel proposto:** Segmenter — chunking e classificação.
+
+**Contrato documental:** entrada tipada; objetivo; decisões permitidas; ferramentas e permissões; saída e evidence IDs; limites; fallback; escalonamento humano.
+
+**Estado:** especificação preliminar; não comprova agente implementado.
+
+**Rastreabilidade:** documentar IDs de requisitos e fontes no registry ao adicionar especificações completas.

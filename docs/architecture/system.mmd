@@ -1,0 +1,11 @@
+flowchart TB
+  WEB[React TypeScript Vite] --> API[FastAPI SSE Security]
+  API --> HARNESS[LangGraph Agent Harness]
+  HARNESS --> RAG[RAG Knowledge]
+  HARNESS --> DYN[System Dynamics]
+  RAG --> DATA[(Persistent Stores External)]
+  DYN --> DATA
+  GOV[Registry Contracts HITL] -.-> API
+  GOV -.-> HARNESS
+  CI[CI/CD Observability] -.-> WEB
+  CI -.-> API
