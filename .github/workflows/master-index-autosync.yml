@@ -1,0 +1,40 @@
+name: Auto-sync master index
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current branch
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - name: Run synchronization regression tests
+        run: python -m unittest discover -s tests/unit -p 'test_master_index_sync.py' -v
+      - name: Discover documents and update registry
+        run: python scripts/sync_master_index.py --write
+      - name: Validate updated index
+        run: python scripts/validate_master_index.py
+      - name: Commit and push index only when changed
+        shell: bash
+        run: |
+          if git diff --quiet -- registry/master-index.csv; then
+            echo "No index changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- registry/master-index.csv
+          git commit -m "docs(registry): auto-sync master-index.csv"
+          git push origin "HEAD:$GITHUB_REF_NAME"
